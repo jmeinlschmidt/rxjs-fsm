@@ -1,2 +1,12 @@
 = rxjs-fsm
 
+image:https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square[]
+image:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg?style=flat-square[]
+
+This package provides a set of tools for utilizing complete deterministic finite automatafootnote:[Finite state machine] in RxJS with a focus on functional programming.
+Allowing developers to efficiently manage complex state machines in context of reactive programming.
+
+✅ Tree Shakeable (ES modules) +
+✅ Fully Typed +
+‼️ Documentation (WIP)
+
