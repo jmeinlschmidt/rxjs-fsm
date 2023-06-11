@@ -13,9 +13,10 @@ Allowing developers to efficiently manage complex state machines in context of r
 
 == Installation
 
-```
+[source, sh]
+----
 npm i @jkba/rxjs-fsm
-```
+----
 
 
 == Usage
