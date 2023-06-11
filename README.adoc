@@ -10,3 +10,25 @@ Allowing developers to efficiently manage complex state machines in context of r
 ✅ Fully Typed +
 ‼️ Documentation (WIP)
 
+
+== Installation
+
+```
+npm i @jkba/rxjs-fsm
+```
+
+
+== Usage
+
+Work in Progress
+
+
+== Building
+
+* `npm run tsc` builds everything
+
+
+== License
+
+This project is licensed under http://opensource.org/licenses/MIT/[MIT License].
+For the full text of the license, see the link:LICENSE[LICENSE] file.
