@@ -1,28 +1,31 @@
-import { Observable, filter, scan, shareReplay } from 'rxjs';
+import { Observable, filter } from 'rxjs';
 
 import { Input, State, StateTransitions } from './models';
-import nextState from './next';
+import { nextState } from './next';
+import { rxjsStore, IStateStore } from './store';
+
+export const createRxJsFsm = <S extends State, T extends Input>(
+  transitions: StateTransitions<S, T>,
+  input$: Observable<T>,
+  initialState: S,
+) => new StateMachine(transitions, input$, rxjsStore(initialState));
 
 export class StateMachine<S extends State, T extends Input> {
   private _state$: Observable<S>;
 
-  public get state$(): Observable<S> {
-    return this._state$.pipe(shareReplay(1));
-  }
-
   constructor(
-    private _input$: Observable<T>, 
-    private _transitions: StateTransitions<S, T>,
-    initialState: S,
+    transitions: StateTransitions<S, T>,
+    input$: Observable<T>,
+    store: IStateStore<S, T>,
   ) {
-    const nextStateFn = nextState<S, T>(this._transitions);
-
-    this._state$ = this._input$.pipe(
-      scan(nextStateFn, initialState),
-    );
+    this._state$ = store(input$, nextState<S, T>(transitions));
   }
 
-  public selectState(state: S): Observable<S> {
-    return this.state$.pipe(filter((value) => value === state));
+  public selectState(state?: S): Observable<S> {
+    if (!state) {
+      return this._state$;
+    }
+
+    return this._state$.pipe(filter((value) => value === state));
   }
 }
