@@ -102,6 +102,5 @@
   },
   "include": [
     "./lib",
-    "./examples" // TODO: Opravdu to tu ma byt?
   ]
 }
