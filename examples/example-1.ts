@@ -30,9 +30,6 @@ const input$: Observable<Input> = merge(
 );
 
 const initialState: State = 'hidden';
-const state$ = input$.pipe(
-  scan(nextState, initialState),
-);
 
 const machine = createRxJsFsm(transitions, input$, initialState);
 
@@ -40,7 +37,7 @@ machine.selectState().subscribe((x) => console.log('toto', x));
 machine.selectState().subscribe((x) => console.log('xxxx', x));
 machine.selectState('shown').subscribe(x => console.log('my state', x));
 
-state$.subscribe(console.log);
+machine.selectState().subscribe(console.log);
 
 toggle$.next();
 toggle$.next();

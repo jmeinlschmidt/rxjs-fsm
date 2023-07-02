@@ -1,4 +1,4 @@
-import { Observable, map, scan, shareReplay, tap, withLatestFrom } from 'rxjs';
+import { Observable, map, scan, shareReplay, startWith, tap, withLatestFrom } from 'rxjs';
 
 import { Input, State } from './models';
 import { INextStateFn } from './next';
@@ -13,7 +13,8 @@ export const rxjsStore = <S extends State, T extends Input>(initialState: S): IS
 ) => {
   return input$.pipe(
     scan(nextStateFn, initialState),
-    shareReplay(1),
+    startWith(initialState),
+    shareReplay(1)
   );
 };
 
