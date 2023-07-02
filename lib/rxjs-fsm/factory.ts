@@ -1,5 +1,5 @@
 import { Input, State, StateTransitions } from './models';
-import markInput from './mark-input';
+import { markInput } from './mark-input';
 import { nextState } from './next';
 
 // These are helper functions, independent of state machine instance.
