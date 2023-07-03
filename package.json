@@ -1,6 +1,6 @@
 {
   "name": "@jkba/rxjs-fsm",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "rxjs-fsm",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "test": "jest",
-    "prepublishOnly": "npm run build && rm -r dist/**/examples"
+    "prepublishOnly": "npm run build && rm -r dist/**/examples && rm -r dist/**/*.spec*"
   },
   "repository": {
     "type": "git",
