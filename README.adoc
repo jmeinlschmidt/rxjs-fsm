@@ -11,6 +11,7 @@ Allowing developers to efficiently manage complex state machines in context of r
 
 ✅ Tree Shakeable (ES modules) +
 ✅ Fully Typed +
+✅ Unit Tests +
 ‼️ Documentation (WIP)
 
 
