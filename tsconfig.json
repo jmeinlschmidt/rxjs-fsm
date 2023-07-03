@@ -102,5 +102,6 @@
   },
   "include": [
     "./lib",
+    "./examples",
   ]
 }
