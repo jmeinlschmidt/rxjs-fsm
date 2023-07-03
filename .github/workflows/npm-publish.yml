@@ -21,8 +21,13 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm audit signatures
+      - name: Download build-output artifact
+        uses: actions/download-artifact@master
+        with:
+          name: build-output
+          path: dist/
+      - name: Delete examples
+        run: rm -r dist/**/examples
       - run: npm pack
       - run: npm publish jkba-rxjs-fsm-*.tgz --access public
         env:

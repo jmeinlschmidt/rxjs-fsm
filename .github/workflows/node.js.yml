@@ -26,5 +26,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
+    - run: npm audit signatures
     - run: npm test
+    - run: npm run build
+      with:
+        name: build-output
+        path: dist/
+
