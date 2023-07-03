@@ -29,7 +29,8 @@ jobs:
     - run: npm audit signatures
     - run: npm test
     - run: npm run build
-      with:
-        name: build-output
-        path: dist/
-
+    - name: Create build-output artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: build-output
+          path: dist/
