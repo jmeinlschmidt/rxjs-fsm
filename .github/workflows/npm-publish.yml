@@ -28,8 +28,6 @@ jobs:
           path: dist/
       - name: Delete examples
         run: rm -r dist/**/examples
-      - name: Delete tests
-        run: rm -r dist/**/*.spec*
       - run: npm pack
       - run: npm publish jkba-rxjs-fsm-*.tgz --access public
         env:
