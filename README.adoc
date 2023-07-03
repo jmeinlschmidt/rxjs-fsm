@@ -1,5 +1,6 @@
 = rxjs-fsm
 
+image:https://github.com/jmeinlschmidt/rxjs-fsm/actions/workflows/node.js.yml/badge.svg[]
 image:https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square[]
 image:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg?style=flat-square[]
 
