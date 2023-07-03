@@ -4,8 +4,9 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -22,6 +23,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm audit signatures
-      - run: npm publish --access public
+      - run: npm pack
+      - run: npm publish jkba-rxjs-fsm-*.tgz --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            jkba-rxjs-fsm-*.tgz
