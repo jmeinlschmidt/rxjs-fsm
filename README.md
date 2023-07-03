@@ -10,10 +10,10 @@
 This package provides a set of tools for utilizing complete deterministic finite automatafootnote:[Finite state machine] in RxJS with a focus on functional programming.
 Allowing developers to efficiently manage complex state machines in context of reactive programming.
 
-✅ Tree Shakeable (ES modules) +
-✅ Fully Typed +
-✅ Unit Tests +
-‼️ Documentation (WIP)
+✅ &nbsp;Tree Shakeable (ES modules)  
+✅ &nbsp;Fully Typed  
+✅ &nbsp;Unit Tests  
+‼️ &nbsp;Documentation (WIP)  
 
 
 ## Installation
