@@ -53,7 +53,7 @@ TODO: Elf (https://github.com/jmeinlschmidt/rxjs-fsm/issues/5), NgRX
 
 ## Building
 
-* `npm run tsc` builds everything
+* `npm run build` builds everything
 
 
 ## License
