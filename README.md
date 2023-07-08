@@ -53,7 +53,7 @@ TODO: Elf (https://github.com/jmeinlschmidt/rxjs-fsm/issues/5), NgRX
 
 ## Building
 
-* `npm run build` builds everything
+Build everything via `npm run build`. Then run from `dist` folder.
 
 
 ## License
