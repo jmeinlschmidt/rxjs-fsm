@@ -51,7 +51,7 @@ TODO: https://github.com/jmeinlschmidt/rxjs-fsm/issues/8
 TODO: Elf (https://github.com/jmeinlschmidt/rxjs-fsm/issues/5), NgRX
 
 
-## Building
+## Build
 
 Build everything via `npm run build`. Then run from `dist` folder.
 
