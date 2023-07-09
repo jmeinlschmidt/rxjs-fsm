@@ -1,8 +1,7 @@
 # rxjs-fsm
 
 ![](https://github.com/jmeinlschmidt/rxjs-fsm/actions/workflows/node.js.yml/badge.svg)
-![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)
-![](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e5079.svg?style=flat-square)
+![](https://img.shields.io/npm/dt/@jkba/rxjs-fsm?logo=npm)
 
 
 > :warning: This package is not yet released!
