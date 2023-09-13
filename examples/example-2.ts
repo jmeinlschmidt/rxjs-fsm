@@ -1,15 +1,12 @@
-import { Subject, merge, scan } from 'rxjs';
+import { Observable, Subject, merge } from 'rxjs';
 
-import { fsmHelpersFactory } from '../lib';
-
+import { fsmHelpersFactory, rxjsFsmFactory } from '../lib';
 import { Input, State, transitions } from './state.config';
 
 /**
- * Example 1
- * Demonstrates creating a FSM only by using RxJs operators.
+ * Example 2
+ * Demonstrates creating a FSM by using class.
  */
-
-const { nextState, markInput } = fsmHelpersFactory<State, Input>(transitions);
 
 // Define inputs
 const toggle$ = new Subject<void>();
@@ -17,18 +14,18 @@ const hide$ = new Subject<void>();
 
 const initialState: State = 'hidden';
 
+const { markInput } = fsmHelpersFactory<State, Input>(transitions);
+
 // Use helper functions
 const input$ = merge(
   toggle$.pipe(markInput('toggle')),
   hide$.pipe(markInput('hide')),
 );
 
-const state$ = input$.pipe(
-  scan(nextState, initialState),
-);
+const machine = rxjsFsmFactory(transitions, input$, initialState);
 
 // Listen
-state$.subscribe((newState) => console.log('New state:', newState));
+machine.selectState().subscribe((newState) => console.log('New state:', newState));
 
 console.log('Initial state:', initialState);
 console.log('Input: toggle');

@@ -1,8 +1,11 @@
 import { Observable, of, take } from 'rxjs';
-import { createRxJsFsm, StateMachine } from './create';
-import { rxjsStore } from './store';
-import { StateTransitions } from './models';
 import { TestScheduler } from 'rxjs/testing';
+
+import { StateTransitions } from '../models';
+import { StateMachine } from '../state';
+import { rxjsStore } from '../store';
+
+import { rxjsFsmFactory } from './rxjs-fsm';
 
 type State = 'A' | 'B';
 type Input = 'X' | 'Y';
@@ -22,7 +25,7 @@ const input$ = of('X', 'Y', 'Y', 'X') as Observable<Input>;
 
 describe('createRxJsFsm', () => {
   test('should create a StateMachine instance with the correct initial state', () => {
-    const stateMachine = createRxJsFsm(transitions, input$, initialState);
+    const stateMachine = rxjsFsmFactory(transitions, input$, initialState);
 
     expect(stateMachine).toBeInstanceOf(StateMachine);
     stateMachine.selectState()

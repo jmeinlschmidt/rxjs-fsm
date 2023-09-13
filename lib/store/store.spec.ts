@@ -1,7 +1,9 @@
 import { BehaviorSubject } from 'rxjs';
-import { INextStateFn } from './next';
-import { externalStore, rxjsStore } from './store';
+import { rxjsStore } from './rxjs-store';
 import { TestScheduler } from 'rxjs/testing';
+
+import { INextStateFn } from '../models';
+import { externalStore } from './external-store';
 
 type State = 'A' | 'B';
 type Input = 'X' | 'Y';

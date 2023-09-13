@@ -1,5 +1,6 @@
-import { StateTransitions } from './models';
-import { INextStateFn, nextState } from './next';
+import { INextStateFn, StateTransitions } from '../models';
+
+import { nextState } from './next';
 
 type State = 'A' | 'B';
 type Input = 'X' | 'Y';

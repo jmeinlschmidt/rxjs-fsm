@@ -1,14 +1,7 @@
 import { Observable, filter } from 'rxjs';
 
-import { Input, State, StateTransitions } from './models';
-import { nextState } from './next';
-import { rxjsStore, IStateStore } from './store';
-
-export const createRxJsFsm = <S extends State, T extends Input>(
-  transitions: StateTransitions<S, T>,
-  input$: Observable<T>,
-  initialState: S,
-) => new StateMachine(transitions, input$, rxjsStore(initialState));
+import { State, Input, StateTransitions, IStateStore } from '../models';
+import { nextState } from '../utils';
 
 export class StateMachine<S extends State, T extends Input> {
   private _state$: Observable<S>;
@@ -22,10 +15,12 @@ export class StateMachine<S extends State, T extends Input> {
   }
 
   public selectState(state?: S): Observable<S> {
+    // Select all states
     if (!state) {
       return this._state$;
     }
 
+    // Select only specific state
     return this._state$.pipe(filter((value) => value === state));
   }
 }
