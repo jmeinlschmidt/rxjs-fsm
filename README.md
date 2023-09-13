@@ -52,7 +52,12 @@ TODO: Elf (https://github.com/jmeinlschmidt/rxjs-fsm/issues/5), NgRX
 
 ## Build
 
-Build everything via `npm run build`. Then run from `dist` folder.
+Use `npm link` and then `npm link @jkba/rxjs-fsm` in your project.
+
+
+## Release
+
+Use `npm version`, don't forget to push the tag and the CI will take care of the rest.
 
 
 ## License
