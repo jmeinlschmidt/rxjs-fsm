@@ -1,8 +1,8 @@
 import { Observable, concat, map, shareReplay, take, tap, withLatestFrom } from 'rxjs';
 
-import { INextStateFn, IStateStore, Input, State } from '../models';
+import { INextStateFn, IStateStore, BaseInput, BaseState } from '../models';
 
-export const externalStore = <S extends State, T extends Input>(
+export const externalStore = <S extends BaseState, T extends BaseInput>(
   stateProp$: Observable<S>,
   updateStateProp: (value: S) => void,
 ): IStateStore<S, T> => (

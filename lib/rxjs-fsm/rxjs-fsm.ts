@@ -1,13 +1,13 @@
 import { Observable } from 'rxjs';
 
-import { Input, State, StateTransitions } from '../models';
+import { BaseInput, BaseState, StateTransitions } from '../models';
 import { rxjsStore } from '../store';
 import { StateMachine } from '../state';
 
 /**
  * Factory state machine based on rxjsStore.
  */
-export const rxjsFsmFactory = <S extends State, T extends Input>(
+export const rxjsFsmFactory = <S extends BaseState, T extends BaseInput>(
   transitions: StateTransitions<S, T>,
   input$: Observable<T>,
   initialState: S,

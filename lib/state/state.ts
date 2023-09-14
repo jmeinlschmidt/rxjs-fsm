@@ -1,9 +1,9 @@
 import { Observable, filter } from 'rxjs';
 
-import { State, Input, StateTransitions, IStateStore } from '../models';
+import { BaseState, BaseInput, StateTransitions, IStateStore } from '../models';
 import { nextState } from '../utils';
 
-export class StateMachine<S extends State, T extends Input> {
+export class StateMachine<S extends BaseState, T extends BaseInput> {
   private _state$: Observable<S>;
 
   constructor(
