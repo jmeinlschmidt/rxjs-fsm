@@ -19,7 +19,7 @@ describe('markInput', () => {
       const expected = `${label}-${label}-${label}`;
 
       const input$ = hot<Input>(inputSeq);
-      const marked$ = input$.pipe(markInput(label));
+      const marked$ = input$.pipe(markInput<unknown, Input>()(label));
 
       expectObservable(marked$).toBe(expected);
     });
