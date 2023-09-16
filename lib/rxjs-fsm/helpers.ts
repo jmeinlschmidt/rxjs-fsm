@@ -1,4 +1,4 @@
-import { markInput, nextState } from '../utils';
+import { fsm, markInput, nextState } from '../utils';
 import { BaseInput, BaseState, StateTransitions } from '../models';
 
 /**
@@ -6,4 +6,8 @@ import { BaseInput, BaseState, StateTransitions } from '../models';
  */
 export const fsmHelpersFactory = <S extends BaseState, T extends BaseInput>(
   transitions: StateTransitions<S, T>,
-) => ({ markInput: markInput<unknown, T>(), nextState: nextState<S, T>(transitions) });
+) => ({
+  markInput: markInput<unknown, T>(),
+  nextState: nextState<S, T>(transitions),
+  fsm: fsm(transitions),
+});

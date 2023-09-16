@@ -86,13 +86,11 @@ Another approach is to avoid the _machine_ object and use this library in a pipe
 
 ```ts
 const {
-  nextState,
+  fsm,
   markInput,
 } = fsmHelpersFactory<State, Input>(transitions);
 
-const state$ = input$.pipe(
-  scan(nextState, initialState),
-);
+const state$ = input$.pipe(fsm(initialState));
 
 state$.subscribe(console.log);
 ```
