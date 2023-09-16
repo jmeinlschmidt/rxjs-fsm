@@ -1,6 +1,6 @@
 {
   "name": "@jkba/rxjs-fsm",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "rxjs-fsm",
   "main": "dist/cjs/lib/index.js",
   "module": "dist/esm/lib/index.js",
